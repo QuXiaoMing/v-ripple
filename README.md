@@ -5,10 +5,12 @@ Ripple Directive For Vue
 ## Starting
 
 ### NPM
+1. install
 ```bash
 npm install ripple-vue -S
 ```
 
+2. import
 ```javaScript
 import Vue from 'vue';
 import VRipple from 'ripple-vue';

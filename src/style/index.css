@@ -7,7 +7,7 @@
     left: 0;
 }
 
-.v-riple-container__ripple {
+.v-riple-animate {
     pointer-events: none;
     /* background: rgba(0, 0, 0, 0.2); */
     background-repeat: no-repeat;
@@ -24,7 +24,7 @@
     transition: 0s; */
 }
 
-.active .v-riple-container__ripple {
+.active .v-riple-animate {
     pointer-events: none;
     opacity: 0;
     transform: scale(20);
