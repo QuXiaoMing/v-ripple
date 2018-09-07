@@ -17,12 +17,12 @@ class Ripple {
     this.$option = Object.assign(
       {
         trigger: [],
-        during: 0.3,
+        during: 0.5,
+        color: 'rgba(0, 0, 0, 0.2)',
         debugger: !isProduction
       },
       option
     );
-
     this.addEvent();
   }
 
@@ -47,7 +47,9 @@ class Ripple {
   }
 
   show(e = { layerX: "50%", layerY: "50%" }) {
+    console.log("color", this.$option.color);
     let { width, height } = this.$el.getBoundingClientRect();
+    const {color, during} = this.$option;
     this.$el.style.position = "relative";
     this.$el.style.overflow = "hidden";
     let { layerX, layerY } = e;
@@ -63,11 +65,13 @@ class Ripple {
 
     addClass(rippleEl, "v-riple-container");
     addClass(rippleAnimate, "v-riple-container__ripple");
-
     rippleEl.style.width = width + "px";
     rippleEl.style.height = height + "px";
     rippleAnimate.style.width = radius + "px";
     rippleAnimate.style.height = radius + "px";
+    rippleAnimate.style.background = color;
+    console.log('during', during);
+    rippleAnimate.style.transitionDuration = `${during}s`;
     rippleAnimate.style.top = isNaN(layerY) ? layerY : layerY + "px";
     rippleAnimate.style.left = isNaN(layerX) ? layerX : layerX + "px";
 
@@ -99,10 +103,11 @@ class Ripple {
 }
 
 function bind(el, binding) {
-  let { modifiers } = binding;
+  let { modifiers, value = {} } = binding;
   const trigger = Object.keys(modifiers).filter(e => eventList.includes(e));
   el.ripple = new Ripple({
     el,
+    ...value,
     trigger: trigger.length ? trigger : ["mouseup"]
   });
 }

@@ -9,13 +9,16 @@
 
 .v-riple-container__ripple {
     pointer-events: none;
-    background: rgba(0, 0, 0, 0.2);
+    /* background: rgba(0, 0, 0, 0.2); */
     background-repeat: no-repeat;
     position: absolute;
     /* left: 70%;
     top: 70%;
     transform: translate(-50%, -50%); */
     border-radius: 50%;
+    /* transition-duration: 0.3s; */
+    transition-property: all;
+    /* transition: all .3s; */
     /* transform: scale(0, 0);
     opacity: .3;
     transition: 0s; */
@@ -25,5 +28,4 @@
     pointer-events: none;
     opacity: 0;
     transform: scale(20);
-    transition: all .3s;
 }
