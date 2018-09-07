@@ -6,7 +6,7 @@
     left: 0;
 }
 
-.v-riple-container__tripple {
+.v-riple-container__ripple {
     background: rgba(0, 0, 0, 0.2);
     background-repeat: no-repeat;
     position: absolute;
@@ -19,7 +19,7 @@
     transition: 0s; */
 }
 
-.active .v-riple-container__tripple {
+.active .v-riple-container__ripple {
     opacity: 0;
     transform: scale(20);
     transition: all .3s;

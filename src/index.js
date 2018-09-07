@@ -3,7 +3,7 @@ import "./style/index.css";
 
 const isProduction = process.env.NODE_ENV === "production";
 
-class Tripple {
+class Ripple {
   constructor(option = {}) {
     let { el } = option;
     this.$el = el;
@@ -48,7 +48,7 @@ class Tripple {
     let rippleAnimate = document.createElement("div");
 
     addClass(rippleEl, "v-riple-container");
-    addClass(rippleAnimate, "v-riple-container__tripple");
+    addClass(rippleAnimate, "v-riple-container__ripple");
 
     rippleEl.style.width = width + "px";
     rippleEl.style.height = height + "px";
@@ -84,7 +84,7 @@ class Tripple {
 }
 
 function bind(el, binding) {
-  el.tripple = new Tripple({
+  el.ripple = new Ripple({
     el
   });
 }

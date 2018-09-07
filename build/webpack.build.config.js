@@ -13,6 +13,6 @@ module.exports = merge(baseConfig, {
   },
   output: {
     path: resolve("dist"),
-    filename: "v-tripple.js"
+    filename: "v-ripple.js"
   }
 });
